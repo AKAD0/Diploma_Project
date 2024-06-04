@@ -29,7 +29,7 @@
                 to "/button" endpoint when <button> pressed  -->
         <form class="ui form" action="/button" method="post" style="display:flex">
             <div class="inline" style="flex-grow:1;">
-                <input type="text" name="title" placeholder="Enter your message...">
+                <input type="text" name="message" placeholder="Enter your message...">
             </div>
             <div class="inline" style="margin-left:5px;">
                 <button class="ui blue button" id="button" type="submit">Send</button>
@@ -42,8 +42,8 @@
         <!-- load DB samples -->
         {% for history in history_list[::-1] %}   
         <div class="ui segment">
-            <!-- print 'title' field -->
-            <p class="ui big header" style="text-align:center;">{{ history.title }}</p>
+            <!-- print 'message' field -->
+            <p class="ui big header" style="text-align:center;">{{ history.message }}</p>
 
             <!-- Button (hyperlink) 'delete' endpoint -->
             <div style="text-align:right;">

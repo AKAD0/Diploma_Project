@@ -18,7 +18,7 @@ db = SQLAlchemy(app)
 # define DB model //table of 3 columns
 class History( db.Model):
     id = db.Column( db.Integer, primary_key=True)
-    title = db.Column( db.String(2000))
+    message = db.Column( db.String(2000))
 
 # create and init the DB
 db.create_all()
@@ -39,14 +39,14 @@ def home():
                                                 #} 2. Adds prompt & respond to DB
                                                 #} 3. Refreshes page
 def button():
-    title = request.form.get("title")           #} get contents of <input> named "title"
+    message = request.form.get("message")           #} get contents of <input> named "message"
                                                 #} from <form>
     # 1. Send prompt & save respond
     ########### <send prompt> ###########
     ########### PLACEHOLDER <save respond> ###########
 
     # 2. Add prompt & respond to DB
-    new_history = History( title=title)         # declare prompt DB sample
+    new_history = History( message=message)         # declare prompt DB sample
     db.session.add( new_history)                #} add&commit new sample to DB
     db.session.commit()                         #}
     ########### PLACEHOLDER <add respond to DB> ###########
