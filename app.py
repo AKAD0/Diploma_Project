@@ -26,24 +26,40 @@ db.create_all()
 
 
 # -- Endpoints //interface
+# 1. Homepage endpoint
 @app.get("/")
 def home():
-    History_list = db.session.query(History).all()                    # load the DB
-    return render_template( "base.html", History_list=History_list)   # render html using the loaded DB
+    history_list = db.session.query(History).all()                    # load the DB
+    return render_template( "base.html", history_list=history_list)   # render html using the loaded DB
 
-@app.post("/button")
+
+# 2. Send button endpoint
+@app.post("/button")                            #} This send button endpoint does 3 things:
+                                                #} 1. Sends prompt & saves respond
+                                                #} 2. Adds prompt & respond to DB
+                                                #} 3. Refreshes page
 def button():
-    title = request.form.get("title")               #} get contents of <input> named "title"
-                                                    #} from <form>
-    new_History = History( title=title)                   # declare new DB sample
-    db.session.add( new_History)                       #} add&commit new sample to DB
-    db.session.commit()                             #}
-    return redirect( url_for( "home"))              # once done redirect to home page
+    title = request.form.get("title")           #} get contents of <input> named "title"
+                                                #} from <form>
+    # 1. Send prompt & save respond
+    ########### <send prompt> ###########
+    ########### PLACEHOLDER <save respond> ###########
 
-@app.get("/delete/<int:History_id>")
-def delete(History_id):
-    History = db.session.query(History).filter(History.id == History_id).first()
-    db.session.delete(History)
+    # 2. Add prompt & respond to DB
+    new_history = History( title=title)         # declare prompt DB sample
+    db.session.add( new_history)                #} add&commit new sample to DB
+    db.session.commit()                         #}
+    ########### PLACEHOLDER <add respond to DB> ###########
+
+    # 3. Refresh page
+    return redirect( url_for( "home"))          # redirect to home page
+
+
+# 3. Delete button endpoint
+@app.get("/delete/<int:history_id>")
+def delete(history_id):
+    history = db.session.query(History).filter(History.id == history_id).first()
+    db.session.delete(history)
     db.session.commit()
     return redirect( url_for( "home"))
 
