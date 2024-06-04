@@ -39,14 +39,21 @@ def home():
                                                 #} 2) Adds prompt & respond to DB
                                                 #} 3) Refreshes page
 def button():
-    message = request.form.get("message")       #} get contents of <input> named "message"
+    prompt = request.form.get("prompt")         #} get contents of <input> named "prompt"
                                                 #} from <form>
     # 1) Send prompt & save respond
-    ########### <send prompt> ###########
+    ###### <insert 'send prompt' code here>
+    ########### PLACEHOLDER <save respond> ###########
+    respond = '<model respond>'
     ########### PLACEHOLDER <save respond> ###########
 
+
     # 2) Add prompt & respond to DB
-    new_history = History( message=message)     # declare prompt DB sample
+    new_history = History( message=prompt)     # declare prompt DB sample
+    db.session.add( new_history)                #} add&commit new sample to DB
+    db.session.commit()                         #}
+    ########### PLACEHOLDER <add respond to DB> ###########
+    new_history = History( message=respond)     # declare prompt DB sample
     db.session.add( new_history)                #} add&commit new sample to DB
     db.session.commit()                         #}
     ########### PLACEHOLDER <add respond to DB> ###########
