@@ -40,14 +40,14 @@
         <hr>
 
         <!-- load DB samples -->
-        {% for todo in todo_list[::-1] %}   
+        {% for History in History_list[::-1] %}   
         <div class="ui segment">
             <!-- print 'title' field -->
-            <p class="ui big header" style="text-align:center;">{{ todo.title }}</p>
+            <p class="ui big header" style="text-align:center;">{{ History.title }}</p>
 
             <!-- Button (hyperlink) 'delete' endpoint -->
             <div style="text-align:right;">
-                <a class="ui mini gray button" href="/delete/{{ todo.id }}">Delete</a>
+                <a class="ui mini gray button" href="/delete/{{ History.id }}">Delete</a>
             </div>
         </div>
         {% endfor %}

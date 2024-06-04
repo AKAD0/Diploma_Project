@@ -16,7 +16,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 # define DB model //table of 3 columns
-class Todo( db.Model):
+class History( db.Model):
     id = db.Column( db.Integer, primary_key=True)
     title = db.Column( db.String(2000))
 
@@ -28,22 +28,22 @@ db.create_all()
 # -- Endpoints //interface
 @app.get("/")
 def home():
-    todo_list = db.session.query(Todo).all()                    # load the DB
-    return render_template( "base.html", todo_list=todo_list)   # render html using the loaded DB
+    History_list = db.session.query(History).all()                    # load the DB
+    return render_template( "base.html", History_list=History_list)   # render html using the loaded DB
 
 @app.post("/button")
 def button():
     title = request.form.get("title")               #} get contents of <input> named "title"
                                                     #} from <form>
-    new_todo = Todo( title=title)                   # declare new DB sample
-    db.session.add( new_todo)                       #} add&commit new sample to DB
+    new_History = History( title=title)                   # declare new DB sample
+    db.session.add( new_History)                       #} add&commit new sample to DB
     db.session.commit()                             #}
     return redirect( url_for( "home"))              # once done redirect to home page
 
-@app.get("/delete/<int:todo_id>")
-def delete(todo_id):
-    todo = db.session.query(Todo).filter(Todo.id == todo_id).first()
-    db.session.delete(todo)
+@app.get("/delete/<int:History_id>")
+def delete(History_id):
+    History = db.session.query(History).filter(History.id == History_id).first()
+    db.session.delete(History)
     db.session.commit()
     return redirect( url_for( "home"))
 
