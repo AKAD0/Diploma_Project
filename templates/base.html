@@ -34,10 +34,12 @@
         {% for todo in todo_list[::-1] %}   
         <div class="ui segment">
             <!-- print 'title' field -->
-            <p class="ui big header" style="text-align:left;">{{ todo.title }}</p>
+            <p class="ui big header" style="text-align:center;">{{ todo.title }}</p>
 
             <!-- Button (hyperlink) 'delete' endpoint -->
-            <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
+            <div style="text-align:right;">
+                <a class="ui mini gray button" href="/delete/{{ todo.id }}">Delete</a>
+            </div>
         </div>
         {% endfor %}
     </div>
