@@ -21,6 +21,7 @@
         }
         .ui.segment {
             background-color: rgba(0, 0, 0, 0.25);
+            border-radius: 15px;
         }
     </style>
 </head>
@@ -37,10 +38,10 @@
         <div style="margin-top:50px; margin-bottom:25px;">
             <form class="ui form" action="/button" method="post" style="display:flex">
                 <div class="inline" style="flex-grow:1;">
-                    <input type="text" name="prompt" placeholder="Enter your message...">
+                    <input type="text" name="prompt" style="background-color:rgba(255, 255, 255, 0.405); border-radius:10px;" placeholder="Enter your message...">
                 </div>
                 <div class="inline" style="margin-left:5px;">
-                    <button class="ui blue button" id="button" type="submit">Send</button>
+                    <button class="ui blue button" style="background-color:rgb(117, 0, 207); border-radius:20px;" id="button" type="submit">Send</button>
                 </div>
             </form>
         </div>
@@ -53,7 +54,7 @@
 
             <!-- Button (hyperlink) 'delete' endpoint -->
             <div style="text-align:right;">
-                <a class="ui mini gray button" href="/delete/{{ history.id }}">Delete</a>
+                <a class="ui mini gray" style="color:rgba(255, 255, 255, 0.155)" href="/delete/{{ history.id }}">[delete]</a>
             </div>
         </div>
         {% endfor %}
