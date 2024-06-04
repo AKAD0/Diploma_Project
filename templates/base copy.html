@@ -28,17 +28,15 @@
         <!-- text field & button  -->
         <!-- // <form> has <input> field to submit it
                 to "/add" endpoint when <button> pressed  -->
-        <form class="ui form" action="/add" method="post" style="display:flex">
-            <div class="inline" style="flex-grow:1;">
-                <input type="text" name="title" placeholder="Enter your message...">
+        <form class="ui form" action="/add" method="post">
+            <div class="field inline">
+                <input type="text" name="title" placeholder="Enter your message..."><br>
             </div>
-            <div class="inline" style="margin-left:5px;">
-                <button class="ui blue button" id="button" type="submit">Send</button>
-            </div>
+            <button class="ui blue button inline" id="button" type="submit">Send</button>
         </form>
 
         <!-- draw horizontal line -->
-        <hr>
+        <hr> 
 
         <!-- load DB samples -->
         {% for todo in todo_list[::-1] %}   
