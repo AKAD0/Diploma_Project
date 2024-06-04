@@ -15,6 +15,9 @@
             display: inline-block;
             vertical-align: top;
         }
+        body {
+            background-image: url('static/background.png');
+        }
     </style>
 </head>
 
@@ -22,22 +25,21 @@
 <!-- body -->
 <body>
     <div style="width:400px; margin-top:50px;" class="ui container">
-        <h1 class="ui center aligned header">AI Chat</h1>
+        <h1 class="ui center aligned header" style="color:white;">AI Chat</h1>
 
         <!-- text field & button  -->
         <!-- // <form> has <input> field to submit it
                 to "/button" endpoint when <button> pressed  -->
-        <form class="ui form" action="/button" method="post" style="display:flex">
-            <div class="inline" style="flex-grow:1;">
-                <input type="text" name="prompt" placeholder="Enter your message...">
-            </div>
-            <div class="inline" style="margin-left:5px;">
-                <button class="ui blue button" id="button" type="submit">Send</button>
-            </div>
-        </form>
-
-        <!-- draw horizontal line -->
-        <hr>
+        <div style="margin-top:50px;">
+            <form class="ui form" action="/button" method="post" style="display:flex">
+                <div class="inline" style="flex-grow:1;">
+                    <input type="text" name="prompt" placeholder="Enter your message...">
+                </div>
+                <div class="inline" style="margin-left:5px;">
+                    <button class="ui blue button" id="button" type="submit">Send</button>
+                </div>
+            </form>
+        </div>
 
         <!-- load DB samples -->
         {% for history in history_list[::-1] %}   
