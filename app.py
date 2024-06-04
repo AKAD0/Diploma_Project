@@ -35,23 +35,23 @@ def home():
 
 # 2. Send button endpoint
 @app.post("/button")                            #} This send button endpoint does 3 things:
-                                                #} 1. Sends prompt & saves respond
-                                                #} 2. Adds prompt & respond to DB
-                                                #} 3. Refreshes page
+                                                #} 1) Sends prompt & saves respond
+                                                #} 2) Adds prompt & respond to DB
+                                                #} 3) Refreshes page
 def button():
-    message = request.form.get("message")           #} get contents of <input> named "message"
+    message = request.form.get("message")       #} get contents of <input> named "message"
                                                 #} from <form>
-    # 1. Send prompt & save respond
+    # 1) Send prompt & save respond
     ########### <send prompt> ###########
     ########### PLACEHOLDER <save respond> ###########
 
-    # 2. Add prompt & respond to DB
-    new_history = History( message=message)         # declare prompt DB sample
+    # 2) Add prompt & respond to DB
+    new_history = History( message=message)     # declare prompt DB sample
     db.session.add( new_history)                #} add&commit new sample to DB
     db.session.commit()                         #}
     ########### PLACEHOLDER <add respond to DB> ###########
 
-    # 3. Refresh page
+    # 3) Refresh page
     return redirect( url_for( "home"))          # redirect to home page
 
 
