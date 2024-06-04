@@ -26,23 +26,20 @@ db.create_all()
 
 
 # -- Endpoints //interface
-# homepage
 @app.get("/")
 def home():
     todo_list = db.session.query(Todo).all()                    # load the DB
     return render_template( "base.html", todo_list=todo_list)   # render html using the loaded DB
 
-# "add" button
-@app.post("/add")
-def add():
+@app.post("/button")
+def button():
     title = request.form.get("title")               #} get contents of <input> named "title"
                                                     #} from <form>
-    new_todo = Todo( title=title)   # declare new DB sample
+    new_todo = Todo( title=title)                   # declare new DB sample
     db.session.add( new_todo)                       #} add&commit new sample to DB
     db.session.commit()                             #}
     return redirect( url_for( "home"))              # once done redirect to home page
 
-# "delete" button
 @app.get("/delete/<int:todo_id>")
 def delete(todo_id):
     todo = db.session.query(Todo).filter(Todo.id == todo_id).first()
