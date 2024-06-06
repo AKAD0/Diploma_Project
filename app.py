@@ -35,28 +35,28 @@ def home():
 
 # 2. Send button endpoint
 @app.post("/button")                            #} This send button endpoint does 3 things:
-                                                #} 1) Sends prompt & saves respond
-                                                #} 2) Adds prompt & respond to DB
+                                                #} 1) Sends prompt & saves response
+                                                #} 2) Adds prompt & response to DB
                                                 #} 3) Refreshes page
 def button():
     prompt = request.form.get("prompt")         #} get contents of <input> named "prompt"
                                                 #} from <form>
-    # 1) Send prompt & save respond
+    # 1) Send prompt & save response
     ###### <insert 'send prompt' code here>
-    ########### PLACEHOLDER <save respond> ###########
-    respond = '<model respond>'
-    ########### PLACEHOLDER <save respond> ###########
+    ########### PLACEHOLDER <save response> ###########
+    response = '<model response>'
+    ########### PLACEHOLDER <save response> ###########
 
 
-    # 2) Add prompt & respond to DB
+    # 2) Add prompt & response to DB
     new_history = History( message=prompt)     # declare prompt DB sample
     db.session.add( new_history)                #} add&commit new sample to DB
     db.session.commit()                         #}
-    ########### PLACEHOLDER <add respond to DB> ###########
-    new_history = History( message=respond)     # declare prompt DB sample
+    ########### PLACEHOLDER <add response to DB> ###########
+    new_history = History( message=response)     # declare prompt DB sample
     db.session.add( new_history)                #} add&commit new sample to DB
     db.session.commit()                         #}
-    ########### PLACEHOLDER <add respond to DB> ###########
+    ########### PLACEHOLDER <add response to DB> ###########
 
     # 3) Refresh page
     return redirect( url_for( "home"))          # redirect to home page
