@@ -43,11 +43,17 @@ def button():
     prompt = request.form.get("prompt")         #} get contents of <input> named "prompt"
                                                 #} from <form>
     # 1) Send prompt & save response
-    response_raw = requests.post(
+    response_json = requests.post(
                             "http://127.0.0.1:8000/predict", 
                             json={"prompt": prompt}
                             )
-    response = response_raw.json()["output"]
+    response_str = response_json.json()["output"]
+    cut = response_str.split("### Response:")
+    print( type(response_str))
+    print(response_str)
+    print( type(cut))
+    print(cut)
+    response = cut[1]
 
 
     # 2) Add prompt & response to DB
@@ -71,3 +77,4 @@ def delete(history_id):
     db.session.delete(history)
     db.session.commit()
     return redirect( url_for( "home"))
+
