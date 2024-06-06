@@ -71,4 +71,3 @@ def delete(history_id):
     db.session.delete(history)
     db.session.commit()
     return redirect( url_for( "home"))
-
