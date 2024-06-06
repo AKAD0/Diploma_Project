@@ -2,6 +2,7 @@
 
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+import requests, json
 
 # --- App object
 app = Flask(__name__)
@@ -42,10 +43,11 @@ def button():
     prompt = request.form.get("prompt")         #} get contents of <input> named "prompt"
                                                 #} from <form>
     # 1) Send prompt & save response
-    ###### <insert 'send prompt' code here>
-    ########### PLACEHOLDER <save response> ###########
-    response = '<model response>'
-    ########### PLACEHOLDER <save response> ###########
+    response_raw = requests.post(
+                            "http://127.0.0.1:8000/predict", 
+                            json={"prompt": prompt}
+                            )
+    response = response_raw.json()["output"]
 
 
     # 2) Add prompt & response to DB
