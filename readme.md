@@ -1,6 +1,6 @@
 # Branches:
 #### 1. "master" - Base version of the Flask web-app
-#### 2. "inferenced" - Modified version that adds interface for the model in "app.py"
+#### 2. "inferenced" - Modified version that integrates the model within "app.py"
 
 # Describtion:
 #### First part of NLP web-app project.
