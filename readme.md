@@ -9,3 +9,9 @@
 ####    https://github.com/AKAD0/diploma_project (this repo)
 #### 2. Finetuned model
 ####    https://huggingface.co/AKAD0/falcon-7b-alpaca/
+
+# Installation:
+#### !!! path errors expected !!!
+#### 1. Download the Flask-app and place it at project root-folder
+#### 2. (venv) pip install "litgpt[all]" 
+#### 3. Download the model and place it's files at '/venv/Lib/site-packages/litgpt/out/lora/final'
