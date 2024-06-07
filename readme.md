@@ -21,3 +21,4 @@
 #### 1. Download the repo in root-folder.
 #### 2. (venv) pip install "litgpt[all]" 
 #### 3. Download the model and place it's files at '/venv/Lib/site-packages/litgpt/out/lora/final'
+#### 4. Replace 'serve.py' at "venv\Lib\site-packages\litgpt\deploy\serve.py"
