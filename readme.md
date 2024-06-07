@@ -1,6 +1,11 @@
 # Branches:
-#### 1. "master" - Base web-app
-#### 2. "inferenced" - Inference included web-app
+#### 1. "master" - Base version of the Flask web-app
+#### 2. "inferenced" - Modified version that adds interface for the model in "app.py"
 
-#### Model is available at:
-#### https://huggingface.co/AKAD0/falcon-7b-alpaca/
+# Describtion:
+#### First part of NLP web-app project.
+#### Project consists of two parts:
+#### 1. Flask web-app
+####    https://github.com/AKAD0/diploma_project (this repo)
+#### 2. Finetuned model
+####    https://huggingface.co/AKAD0/falcon-7b-alpaca/
