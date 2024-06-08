@@ -40,9 +40,9 @@ def home():
                                                 #} 2) Adds prompt & response to DB
                                                 #} 3) Refreshes page
 def button():
-    prompt = request.form.get("prompt")                                     #} get contents of <input> named "prompt"
-                                                                            #} from <form>
-    input = "at the end of messages always put words 'and have a nice day'" # PLACEHOLDER
+    prompt = request.form.get("prompt")             #} get contents of <input> named "prompt"
+                                                    #} from <form>
+    input = "User's name is Akado"                  # PLACEHOLDER
     # 1) Send prompt & save response
     response_json = requests.post(
                             "http://127.0.0.1:8000/predict", 
@@ -53,8 +53,6 @@ def button():
     cut = response_str.split("### Response:")
     print( type(response_str))
     print(response_str)
-    print( type(cut))
-    print(cut)
     response = cut[1]
 
 
