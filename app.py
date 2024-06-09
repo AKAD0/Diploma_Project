@@ -42,7 +42,11 @@ def home():
 def button():
     prompt = request.form.get("prompt")             #} get contents of <input> named "prompt"
                                                     #} from <form>
-    input = "User's name is Akado"                  # PLACEHOLDER
+    input = 'User name is Akado'                    # PLACEHOLDER
+    # Getting history from DB
+    input_temp = db.session.query(History).order_by(History.id.desc()).limit(10).all()
+    for entry in input_temp:
+        print( entry.message)
     # 1) Send prompt & save response
     response_json = requests.post(
                             "http://127.0.0.1:8000/predict", 
