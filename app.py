@@ -11,18 +11,23 @@ app.app_context().push()        # flask_sqlalchemy troubleshooting
 
 
 # --- Database
-# setup DB file for the app & create DB object
+# setup DB files for the app & create DB object
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
+app.config['SQLALCHEMY_BINDS'] = {'topic_db': 'sqlite:///topic_db.sqlite'}
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-# define DB model //table of 3 columns
+# define DB models //table of 2 columns
 class History( db.Model):
     id = db.Column( db.Integer, primary_key=True)
     message = db.Column( db.String(2000))
+class Topic( db.Model):
+    __bind_key__ = 'topic_db'
+    topic_id = db.Column( db.Integer, primary_key=True)
+    topic_message = db.Column( db.String(2000))
 
-# create and init the DB
-db.create_all()
+# create and init DBs
+db.create_all(bind_key=[None, 'topic_db'])
 
 
 
@@ -37,41 +42,63 @@ def home():
 # 2. Send button endpoint
 @app.post("/button")                            #} This send button endpoint does 3 things:
                                                 #} 1) Sends prompt & saves response
-                                                #} 2) Adds prompt & response to DB
-                                                #} 3) Refreshes page
+                                                #} 2) Adds prompt & response to 'History' DB
+                                                #} 3) Creates another topic for 'Topic' DB
+                                                #} 4) Refreshes page
 def button():
-    prompt = request.form.get("prompt")             #} get contents of <input> named "prompt"
-                                                    #} from <form>
-    input = 'sugar, Earth, books, cake, music'
+    # Loading 5 last topics from 'Topic' DB                                                
+    topic = ''
+    topic_temp = db.session.query(Topic).order_by(Topic.topic_id.desc()).limit(5).all()
+    for entry in topic_temp:
+        topic = topic+entry.topic_message+'; '
+    input = topic
 
-    # Getting history from DB
-    input_temp = db.session.query(History).order_by(History.id.desc()).limit(10).all()
-    for entry in input_temp:
-        print( entry.message)
+
     # 1) Send prompt & save response
+    prompt = request.form.get("prompt")     #} get contents of <input> named "prompt"
+                                            #} from <form>
     response_json = requests.post(
                             "http://127.0.0.1:8000/predict", 
                             json={"prompt": prompt,
                                   "input": input}
                             )
     response_str = response_json.json()["output"]
+    print( '######### RESPONSE PROMPT #########')
+    print( response_str)
     cut = response_str.split("### Response:")
-    print( type(response_str))
-    print(response_str)
     response = cut[1]
 
 
-    # 2) Add prompt & response to DB
-    new_history = History( message=prompt)     # declare prompt DB sample
+    # 2) Add prompt & response to 'History' DB
+    new_history = History( message=prompt)      # declare prompt DB sample
     db.session.add( new_history)                #} add&commit new sample to DB
     db.session.commit()                         #}
-    ########### PLACEHOLDER <add response to DB> ###########
-    new_history = History( message=response)     # declare prompt DB sample
+    new_history = History( message=response)    # declare prompt DB sample
     db.session.add( new_history)                #} add&commit new sample to DB
     db.session.commit()                         #}
-    ########### PLACEHOLDER <add response to DB> ###########
 
-    # 3) Refresh page
+
+    # 3) Create another topic for 'Topic' DB
+    prompt = ''
+    prompt_temp = db.session.query(History).order_by(History.id.desc()).limit(2).all()
+    prompt = 'In less than exactly 5 words explain what was this dialogue about: me: ' + prompt_temp[1].message + ' you: ' + prompt_temp[0].message
+    response_json = requests.post(
+                            "http://127.0.0.1:8000/predict", 
+                            json={"prompt": prompt,
+                                  "input": ''}
+                            )
+    response_str = response_json.json()["output"]
+    print( '######### TOPIC PROMPT #########')
+    print( response_str)
+    cut = response_str.split("### Response:")
+    response = cut[1]
+    
+    new_topic = Topic( topic_message=response)                # declare prompt DB sample
+    db.session.add( new_topic)     #} add&commit new sample to DB
+    db.session.commit()            #}
+
+
+    # 4) Refresh page
     return redirect( url_for( "home"))          # redirect to home page
 
 
