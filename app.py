@@ -42,7 +42,8 @@ def home():
 def button():
     prompt = request.form.get("prompt")             #} get contents of <input> named "prompt"
                                                     #} from <form>
-    input = 'User name is Akado'                    # PLACEHOLDER
+    input = 'sugar, Earth, books, cake, music'
+
     # Getting history from DB
     input_temp = db.session.query(History).order_by(History.id.desc()).limit(10).all()
     for entry in input_temp:
