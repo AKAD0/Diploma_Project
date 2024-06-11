@@ -82,7 +82,7 @@ def button():
     # 3) Create another thesis for 'Thesis' DB
     prompt = ''
     prompt_temp = db.session.query(QNA).order_by(QNA.id.desc()).limit(2).all()
-    prompt = 'In less than exactly 5 words explain what was this dialogue about: me: ' + prompt_temp[1].message + ' you: ' + prompt_temp[0].message
+    prompt = 'We had a dialogue where I said: ' + prompt_temp[1].message + ' And you replied: ' + prompt_temp[0].message + '. In less than exactly 5 words explain what was the dialogue about.'
     response_json = requests.post(
                             "http://127.0.0.1:8000/predict", 
                             json={"prompt": prompt,
