@@ -41,22 +41,23 @@ def home():
 
 # 2. Send button endpoint
 @app.post("/button")                            #} This send button endpoint does 3 things:
-                                                #} 1) Sends prompt & saves response
+                                                #} 1) Builds, Sends prompt & saves response
                                                 #} 2) Adds prompt & response to 'QNA' DB
                                                 #} 3) Creates another thesis for 'Thesis' DB
                                                 #} 4) Refreshes page
 def button():
-    # Loading 5 last thesises from 'Thesis' DB                                                
+    # 1) Send prompt & save response
+    # Building prompt: Loading 5 last theses from 'Thesis' DB                                                
     thesis = ''
     thesis_temp = db.session.query(Thesis).order_by(Thesis.thesis_id.desc()).limit(5).all()
     for entry in thesis_temp:
         thesis = thesis+entry.thesis_message+'; '
     input = thesis
 
+    # Building prompt: Get contents of <input> named "prompt" from <form>
+    prompt = request.form.get("prompt")     
 
-    # 1) Send prompt & save response
-    prompt = request.form.get("prompt")     #} get contents of <input> named "prompt"
-                                            #} from <form>
+    # Sending built prompt & saving model response
     response_json = requests.post(
                             "http://127.0.0.1:8000/predict", 
                             json={"prompt": prompt,
@@ -70,11 +71,11 @@ def button():
 
 
     # 2) Add prompt & response to 'QNA' DB
-    new_qna = QNA( message=prompt)      # declare prompt DB sample
-    db.session.add( new_qna)                #} add&commit new sample to DB
+    new_qna = QNA( message=prompt)              # declare prompt DB sample
+    db.session.add( new_qna)                    #} add&commit new sample to DB
     db.session.commit()                         #}
-    new_qna = QNA( message=response)    # declare prompt DB sample
-    db.session.add( new_qna)                #} add&commit new sample to DB
+    new_qna = QNA( message=response)            # declare prompt DB sample
+    db.session.add( new_qna)                    #} add&commit new sample to DB
     db.session.commit()                         #}
 
 
@@ -93,9 +94,9 @@ def button():
     cut = response_str.split("### Response:")
     response = cut[1]
     
-    new_thesis = Thesis( thesis_message=response)                # declare prompt DB sample
-    db.session.add( new_thesis)     #} add&commit new sample to DB
-    db.session.commit()            #}
+    new_thesis = Thesis( thesis_message=response)       # declare prompt DB sample
+    db.session.add( new_thesis)                         #} add&commit new sample to DB
+    db.session.commit()                                 #}
 
 
     # 4) Refresh page
