@@ -93,6 +93,7 @@ def button():
     print( response_str)
     cut = response_str.split("### Response:")
     response = cut[1]
+    response = response[:100]                           # Truncating string to save context capacity 
     
     new_thesis = Thesis( thesis_message=response)       # declare prompt DB sample
     db.session.add( new_thesis)                         #} add&commit new sample to DB

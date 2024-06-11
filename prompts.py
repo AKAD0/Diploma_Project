@@ -47,7 +47,7 @@ class Alpaca(PromptStyle):
             return (
                 "Below is an instruction that describes a task. "
                 "Write a response that appropriately completes the request.\n\n"
-                f"### Instruction:\nPreviously we discussed: '{kwargs['input']}'. Answer to this message: '{prompt}'\n\n### Response:\n"
+                f"### Instruction:\nPreviously we did talk, chat and discuss these topics: '{kwargs['input']}'. Taking them into consideration answer to this message: '{prompt}'\n\n### Response:\n"
             )
         return (
             "Below is an instruction that describes a task. "
