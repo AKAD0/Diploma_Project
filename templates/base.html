@@ -49,14 +49,14 @@
         </div>
 
         <!-- load DB samples -->
-        {% for history in history_list[::-1] %}   
+        {% for qna in qna_list[::-1] %}   
         <div class="ui segment">
             <!-- print 'message' field -->
-            <p class="ui big header" style="text-align:center; color:white; margin-bottom:5px; margin-top:10px;">{{ history.message }}</p>
+            <p class="ui big header" style="text-align:center; color:white; margin-bottom:5px; margin-top:10px;">{{ qna.message }}</p>
 
             <!-- Button (hyperlink) 'delete' endpoint -->
             <div style="text-align:right;">
-                <a class="ui mini gray" style="color:rgba(255, 255, 255, 0.155)" href="/delete/{{ history.id }}">[delete]</a>
+                <a class="ui mini gray" style="color:rgba(255, 255, 255, 0.155)" href="/delete/{{ qna.id }}">[delete]</a>
             </div>
         </div>
         {% endfor %}
