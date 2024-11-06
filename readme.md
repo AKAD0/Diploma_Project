@@ -14,7 +14,6 @@ Project consists of two parts:
    https://huggingface.co/AKAD0/falcon-7b-alpaca/
 
 # 'memassist' Branch Installation:
-!!! path errors expected !!!
 1. Download the repo in root-folder.
 2. (venv) pip install "litgpt[all]" 
 3. Download the model and place it's files at '/venv/Lib/site-packages/litgpt/out/lora/final'
