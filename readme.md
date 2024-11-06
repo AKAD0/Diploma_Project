@@ -1,3 +1,8 @@
+# Deployed web-app:
+<p align="center">
+  <img src="https://github.com/AKAD0/FNN.SGD_MNIST/blob/master/Fig1.png](https://github.com/AKAD0/diploma_project/blob/memassist/Screenshot%202024-11-06%20040447.png">
+</p>
+
 # Project Describtion:
 #### First part of NLP web-app project.
 #### Project consists of two parts:
