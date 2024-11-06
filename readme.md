@@ -23,10 +23,17 @@ Project consists of two parts:
 
 # Repository Branches:
 1. "master" - Base version of the Flask web-app.
+
               Independent. (Doesn't involve model)
+
 2. "inferenced" - Modified version of 'master' branch:
-                  1) "app.py" - modified "button()" endpoint to integrate model
-                  Dependancies: library "litgpt[all]", model
+
+              1) "app.py" - modified "button()" endpoint to integrate model
+
+              Dependancies: library "litgpt[all]", model
+
 3. "memassist" - Modified version of 'inferenced' branch:
-                 1) "venv\Lib\site-packages\litgpt\deploy\serve.py" - customized 'decode_request()' to include 'input' field from JSON payload
-                 2) "app.py" - modified "button().response_json" variable to have 'input' field
+
+              1) "venv\Lib\site-packages\litgpt\deploy\serve.py" - customized 'decode_request()' to include 'input' field from JSON payload
+
+              2) "app.py" - modified "button().response_json" variable to have 'input' field
