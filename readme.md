@@ -1,4 +1,4 @@
-[![Watch the video](thumb.png)](https://www.youtube.com/watch?v=32hbY_C8xP0)
+https://github.com/user-attachments/assets/dc2f152e-5126-4279-8c80-1a07117355cc
 
 ```
 — Miscelanious:
