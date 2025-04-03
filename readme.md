@@ -13,7 +13,7 @@ AI Chat — это чатбот, вдохновленный ChatGPT, с кото
 </div>
 
 ## Презентация
-https://github.com/user-attachments/assets/3243483d-4016-4436-b134-9d0569b45859
+<div height="512">https://github.com/user-attachments/assets/3243483d-4016-4436-b134-9d0569b45859</div>div
 
 ## Технологии
 Проект включал решение следующих задач:
