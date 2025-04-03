@@ -3,8 +3,8 @@
 
    Here is the first part of NLP web-app project. Project consists of two parts:
 
-   a. Flask web-app
-      \https://github.com/AKAD0/diploma_project (this repo)
+   a. Flask web-app\
+      https://github.com/AKAD0/diploma_project (this repo)
 
    b. Finetuned model
 
