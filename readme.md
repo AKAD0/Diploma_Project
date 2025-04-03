@@ -25,8 +25,8 @@ https://github.com/user-attachments/assets/3243483d-4016-4436-b134-9d0569b45859
     <td><img src="gitpage_mats/bench.png" height="512" align="center"></td>
   </tr>
   <tr>
-    <td>Динамика функции ошибки по процесу обучения</td>
-    <td>Показатели тестирования на бенчмарках</td>
+    <td align="center">Динамика функции ошибки по процесу обучения</td>
+    <td align="center">Показатели тестирования на бенчмарках</td>
   </tr>
 </table>
 
