@@ -15,11 +15,11 @@ AI Chat — это чатбот, вдохновленный ChatGPT, с кото
 ## Презентация
 https://github.com/user-attachments/assets/3243483d-4016-4436-b134-9d0569b45859
 
-<div align="center"> ## Технологии </div>
-<div align="center"> Проект включал решение следующих задач: </div>
+## Технологии
+Проект включал решение следующих задач:
 1) Обучение <a href="https://huggingface.co/tiiuae/falcon-7b"><u>LLM Falcon 7B</u></a>, на датасете <a href="https://huggingface.co/datasets/tatsu-lab/alpaca"><u>Alpaca</u></a> методом <a href="https://arxiv.org/abs/2106.09685"><u>LoRA</u></a> при помощи фреймворка <a href="https://github.com/Lightning-AI/litgpt"><u>LitGPT</u></a>; <br />
 
-![](gitpage_mats/graph.png)                             |  ![](gitpage_mats/bench.png)
+![](<img src="gitpage_mats/graph.png" width="600" )     |  ![](gitpage_mats/bench.png)
 :------------------------------------------------------:|:------------------------------------------------------:
 Динамика функции ошибки по процесу обучения             |  Показатели тестирования на бенчмарках
 
