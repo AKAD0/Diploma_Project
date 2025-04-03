@@ -16,10 +16,18 @@ AI Chat — это чатбот, вдохновленный ChatGPT, с кото
 https://github.com/user-attachments/assets/3243483d-4016-4436-b134-9d0569b45859
 
 ## Технологии
-Функционал обеспечен 
-<a href="https://huggingface.co/tiiuae/falcon-7b"><u>Falcon 7B</u></a>
-тонко настроенной на датасете
+Языковой функционал обеспечен LLM 
+<a href="https://huggingface.co/tiiuae/falcon-7b"><u>Falcon 7B</u></a>,
+тонко настроенной методом  
+<a href="https://arxiv.org/abs/2106.09685"><u>LoRa</u></a>
+на датасете
 <a href="https://huggingface.co/datasets/tatsu-lab/alpaca"><u>Alpaca</u></a>.
+Обучение модели было произведено с помощью фреймворка
+<a href="https://github.com/Lightning-AI/litgpt"><u>LitGPT</u></a>,
+а веб-приложение реализовано на
+<a href="https://flask.palletsprojects.com/en/stable/"><u>Flask</u></a>
+при помощи
+<a href="https://flask-sqlalchemy.readthedocs.io/"><u>Flask-SQLAlchemy</u></a>.
 
 ## Принцип работы
 фыва
