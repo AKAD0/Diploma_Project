@@ -1,9 +1,7 @@
 # Miscelanious: 
 1. Repository Describtion:
 
-   Here is the first part of NLP web-app project.
-
-   Project consists of two parts:
+   Here is the first part of NLP web-app project. Project consists of two parts:
 
    a. Flask web-app
 
