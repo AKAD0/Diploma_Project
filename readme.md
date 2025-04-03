@@ -7,11 +7,6 @@
 
 AI Chat — это чатбот, вдохновленный ChatGPT, с которым можно общаться на широкие темы,<br />способный помнить давно прошедшие разговоры.
 
-Функционал обеспечен 
-<a href="https://huggingface.co/tiiuae/falcon-7b"><u>Falcon 7B</u></a>
-тонко настроенной на датасете
-<a href="https://huggingface.co/datasets/tatsu-lab/alpaca"><u>Alpaca</u></a>.
-
 [Презентация](#презентация) •
 [Технологии](#технологии) •
 [Принцип работы](#принцип-работы)
@@ -21,7 +16,10 @@ AI Chat — это чатбот, вдохновленный ChatGPT, с кото
 https://github.com/user-attachments/assets/3243483d-4016-4436-b134-9d0569b45859
 
 ## Технологии
-фыва
+Функционал обеспечен 
+<a href="https://huggingface.co/tiiuae/falcon-7b"><u>Falcon 7B</u></a>
+тонко настроенной на датасете
+<a href="https://huggingface.co/datasets/tatsu-lab/alpaca"><u>Alpaca</u></a>.
 
 ## Принцип работы
 фыва
