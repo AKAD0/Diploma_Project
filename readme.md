@@ -7,7 +7,12 @@
 
 AI Chat — это чатбот, вдохновленный ChatGPT, с которым можно общаться на широкие темы,<br />способный помнить давно прошедшие разговоры.
 
-Функционал обеспечен LLM Falcon 7B, тонко настроенной на датасете Alpaca. 
+<div><sup>
+  Функционал обеспечен 
+  <a href="https://huggingface.co/tiiuae/falcon-7b"><u>Falcon 7B</u></a>
+  тонко настроенной на датасете
+  <a href="https://huggingface.co/datasets/tatsu-lab/alpaca"><u>Alpaca</u></a>.
+</sup></div>
 
 [Презентация](#презентация) •
 [Технологии](#технологии) •
