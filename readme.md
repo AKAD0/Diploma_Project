@@ -1,33 +1,19 @@
 # Miscelanious: 
-1. Repository Describtion:
-
-   Here is the first part of NLP web-app project. Project consists of two parts:
-
+1. Repository Describtion:\
+   Here is the first part of NLP web-app project. Project consists of two parts:\
    a. Flask web-app\
-      https://github.com/AKAD0/diploma_project (this repo)
-
-   b. Finetuned model
-
+      https://github.com/AKAD0/diploma_project (this repo)\
+   b. Finetuned model\
       https://huggingface.co/AKAD0/falcon-7b-alpaca/
-
-3. Repository Branches:
-
-   a. "master" - Base version of the Flask web-app.
-
-      Independent. (Doesn't involve model)
-
-   b. "inferenced" - Modified version of 'master' branch:
-
-      Dependancies: library "litgpt[all]", model
-
-   c. "memassist" - Modified version of 'inferenced' branch:
-
-      1) "venv\Lib\site-packages\litgpt\deploy\serve.py" - customized 'decode_request()' to include 'input' field from JSON payload
-
-      2) "app.py" - modified "button().response_json" variable to have 'input' field
-
-5. 'master' Branch Installation:
-
-   !!! path errors expected !!!
-
+   \
+3. Repository Branches:\
+   a. "master" - Base version of the Flask web-app.\
+      Independent. (Doesn't involve model)\
+   b. "inferenced" - Modified version of 'master' branch:\
+      Dependancies: library "litgpt[all]", model\
+   c. "memassist" - Modified version of 'inferenced' branch:\
+      1) "venv\Lib\site-packages\litgpt\deploy\serve.py" - customized 'decode_request()' to include 'input' field from JSON payload\
+      2) "app.py" - modified "button().response_json" variable to have 'input' field\
+5. 'master' Branch Installation:\
+   !!! path errors expected !!!\
    Download the repo in root-folder.
