@@ -21,8 +21,8 @@ https://github.com/user-attachments/assets/3243483d-4016-4436-b134-9d0569b45859
 
 <table>
   <tr>
-    <td><img src="gitpage_mats/graph.png" height="200"></td>
-    <td><img src="gitpage_mats/bench.png" height="200"></td>
+    <td><img src="gitpage_mats/graph.png" height="512" align="center"></td>
+    <td><img src="gitpage_mats/bench.png" height="512" align="center"></td>
   </tr>
   <tr>
     <td>Динамика функции ошибки по процесу обучения</td>
