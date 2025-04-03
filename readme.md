@@ -21,6 +21,7 @@ https://github.com/user-attachments/assets/3243483d-4016-4436-b134-9d0569b45859
 <div align="center"><img src="gitpage_mats/graph.png" alt="Warp" /><br /> Динамика функции ошибки по процесу обучения</div> <br />
 <div align="center"><img src="gitpage_mats/bench.png" alt="Warp" /><br /> Показатели тестирования на бенчмарках</div> <br />
 2) Написание <a href="https://flask.palletsprojects.com/en/stable/"><u>Flask</u></a> веб-приложения для чата с LLM с применением <a href="https://flask-sqlalchemy.readthedocs.io/"><u>ORM Flask-SQLAlchemy</u></a>; <br />
+<div align="center"><img src="gitpage_mats/diagram.png" alt="Warp" /><br /> Работа веб приложения на диаграмме деятельности</div> <br />
 3) Деплой веб-приложения.
 
 ## Принцип работы
