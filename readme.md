@@ -1,4 +1,4 @@
-![Video](https://www.youtube.com/watch?v=32hbY_C8xP0)
+[![Watch the video](thumb.png)](https://www.youtube.com/watch?v=32hbY_C8xP0)
 
 ```
 — Miscelanious:
