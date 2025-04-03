@@ -30,6 +30,7 @@ https://github.com/user-attachments/assets/3243483d-4016-4436-b134-9d0569b45859
   </tr>
 </table>
 
+
 2) Написание <a href="https://flask.palletsprojects.com/en/stable/"><u>Flask</u></a> веб-приложения для чата с LLM с применением <a href="https://flask-sqlalchemy.readthedocs.io/"><u>ORM Flask-SQLAlchemy</u></a>; <br />
 <table align="center">
   <tr>
