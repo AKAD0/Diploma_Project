@@ -6,6 +6,7 @@
    b. Finetuned model\
       https://huggingface.co/AKAD0/falcon-7b-alpaca/
    \
+   \
 3. Repository Branches:\
    a. "master" - Base version of the Flask web-app.\
       Independent. (Doesn't involve model)\
