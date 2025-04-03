@@ -8,7 +8,7 @@
    
 2. Repository Branches:\
    a. "master" - Base version of the Flask web-app.\
-      >Independent. (Doesn't involve model)\
+      Independent. (Doesn't involve model)\
    b. "inferenced" - Modified version of 'master' branch:\
       Dependancies: library "litgpt[all]", model\
    c. "memassist" - Modified version of 'inferenced' branch:\
