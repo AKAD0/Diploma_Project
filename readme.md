@@ -31,7 +31,7 @@ https://github.com/user-attachments/assets/3243483d-4016-4436-b134-9d0569b45859
 </table>
 
 2) Написание <a href="https://flask.palletsprojects.com/en/stable/"><u>Flask</u></a> веб-приложения для чата с LLM с применением <a href="https://flask-sqlalchemy.readthedocs.io/"><u>ORM Flask-SQLAlchemy</u></a>; <br />
-<div align="center"><img src="gitpage_mats/diagram_2.png" width="600" alt="Warp" /><br /> Работа веб-приложения на диаграмме деятельности</div> <br />
+<div align="center"><img src="gitpage_mats/diagram_2.png" width="512" alt="Warp" /><br /> Работа веб-приложения на диаграмме деятельности</div> <br />
 
 3) Деплой веб-приложения.
 
