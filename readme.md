@@ -1,4 +1,4 @@
-![Video](https://github.com/AKAD0/diploma_project/blob/master/Video_1.webm)
+![Video](https://www.youtube.com/watch?v=32hbY_C8xP0)
 
 ```
 — Miscelanious:
