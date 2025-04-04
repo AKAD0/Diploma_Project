@@ -8,7 +8,9 @@
 <a href="https://vk.com/nars01_vk">
   <img height="30" src="gitpage_mats/vk.png"/>
 </a>
-
+<a href="https://www.instagram.com/arsalan.namnanov">
+  <img height="30" src="gitpage_mats/ig.png"/>
+</a>
 
 <div><img src="gitpage_mats/logo_3.png" width="350" alt="logo" /></div>
 <div><b>Локальный чатбот "AI Chat"</b></div>
