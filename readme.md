@@ -3,10 +3,10 @@
   
 <sup>Намнанов Арсалан Батоевич, 2024</sup> <br />
 <a href="https://t.me/Nars01">
-  <img height="25" src="gitpage_mats/tg.png"/>
+  <img height="30" src="gitpage_mats/tg.png"/>
 </a>
 <a href="https://vk.com/nars01_vk">
-  <img height="25" src="gitpage_mats/vk.png"/>
+  <img height="30" src="gitpage_mats/vk.png"/>
 </a>
 
 
