@@ -2,7 +2,7 @@
 <sup>Дипломный проект "NLP веб-приложение"</sup>
   
 <sup>Намнанов Арсалан Батоевич, 2024</sup>
-<div><img src="gitpage_mats/logo.png" width="400" alt="Warp" /></div>
+<div><img src="gitpage_mats/logo.png" width="350" alt="Warp" /></div>
 <div><b>Локальный чатбот "AI Chat"</b></div>
 
 AI Chat — это чатбот, вдохновленный ChatGPT, с которым можно общаться на широкие темы,<br />способный помнить давно прошедшие разговоры.
