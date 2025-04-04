@@ -2,6 +2,14 @@
 <sup>Дипломный проект "NLP веб-приложение"</sup>
   
 <sup>Намнанов Арсалан Батоевич, 2024</sup>
+<a href="https://t.me/Nars01">
+  <img height="50" src="gitpage_mats/tg.png"/>
+</a>
+<a href="https://vk.com/nars01_vk">
+  <img height="50" src="gitpage_mats/vk.png"/>
+</a>
+
+
 <div><img src="gitpage_mats/logo_3.png" width="350" alt="logo" /></div>
 <div><b>Локальный чатбот "AI Chat"</b></div>
 
