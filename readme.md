@@ -13,7 +13,7 @@
 </a>
 
 <div><img src="gitpage_mats/logo_3.png" width="350" alt="logo" /></div>
-<div><b>Локальный чатбот "AI Chat"</b></div>
+<div><b>Чатбот "AI Chat"</b></div>
 
 AI Chat — это чатбот, вдохновленный ChatGPT, с которым можно общаться на широкие темы,<br /> а также способный помнить давно прошедшие разговоры.
 
